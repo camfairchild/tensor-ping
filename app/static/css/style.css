@@ -1,0 +1,107 @@
+form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    width: 50vw;
+}
+
+#uid {
+    width: 120px;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+}
+
+.root {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+}
+
+.result-root {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    row-gap: 10px;
+    width: 50vw;
+}
+
+.result-balance {
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+#result {
+    background-color: lightgray;
+    border-radius: 15px;
+    border: 1px solid black;
+    min-height: 20vh;
+    width: 100%;
+    padding: 10px;
+    margin: auto;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+hr {
+    margin: 2em;
+    width: 85%;
+    border: 1px solid lightgrey
+}
+
+.git-link {
+    text-decoration: none;
+    color: black;
+}
+
+    .git-link i {
+        font-size: 26px;
+    }
+
+    .git-link:hover {
+        color: grey;
+     }
+
+#footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.footer-inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px 0px 10px 0px;
+    column-gap: 1em;
+    padding: 0px 10px;
+}
+
+
+    .footer-inner > * {
+        border-right: 1.5px grey solid;
+        padding-right: 1em;
+    }
+
+    .footer-inner > *:last-child {
+        border-right: none;
+    }
+
+.donation {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}

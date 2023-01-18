@@ -1,0 +1,91 @@
+<!doctype html>
+<!-- Copyright (C) 2022-2023 Cameron Fairchild 
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/js/script.js"></script>
+    <link rel="stylesheet" href="/static/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Tensor Ping</title>
+</head>
+
+<body>
+    <h1>Tensor Ping</h1>
+    <div id="ping-root" class="root">
+        <p>You can use this form to ping your Bittensor Server.</p>
+        <form id="form">
+            <label for="uid" aria-required="true">Server UID:</label>
+            <input type="number" id="uid" name="uid" max="4095" min="0"><br><br>
+            <label for="forward_text" aria-required="false">Forward Text:</label>
+            <textarea type="text" id="forward_text" name="forward_text"></textarea><br><br>
+            <button id="submit" type="button">  Ping</button>
+        </form>
+        <div id="result-root" class="result-root" d>
+            Result:
+            <pre id="result">
+
+            </pre>
+        </div>
+    </div>
+    <hr />
+    <div id="balance-root" class="root">
+        <p> You can use this form to get your Tao balance. </p>
+        <form id="form-balance">
+            <label for="addr" aria-required="true">ss58 address:</label>
+            <input type="text" id="addr" name="addr" maxlength="48"><br><br>
+            <button id="submit-balance" type="button">Get Balance</button>
+        </form>
+        <div id="result-balance-root" class="result-root result-balance">
+            Balance (Tao):
+            <pre id="result-balance">
+
+            </pre>
+        </div>
+    </div>
+    <hr /> 
+    <div id="faucet-root" class="root">
+      <p> You can use this form to get some <b>TEST</b> TAO for nobunaga </p>
+      <form id="form-faucet">
+            <label for="addr" aria-required="true">ss58 address:</label>
+            <input type="text" id="addr" name="addr" maxlength="48"><br><br>
+            <button id="submit-faucet" type="button">Get TEST TAO</button>
+      </form>
+      <div id="result-faucet-root" class "result-root result-faucet">
+         Status:
+         <pre id="result-faucet">
+         
+	</pre>
+      </div>
+   </div>
+   <hr /> 
+   <footer id="footer">
+    <div class="footer-inner">
+        <a href="https://github.com/camfairchild/tensor-ping" class="git-link">
+            <i class="fa fa-github"></i>
+        </a>
+        <div class="donation">
+            <p>Buy me a Coffee: </p>
+            <pre>5EHVUNEqz1js5LdnW56hFpqKAV2pEGa7GCA2z6r7GVdLyTZE</pre>
+        </div>
+    </div>
+   </footer>
+</body>
+
+</html>
