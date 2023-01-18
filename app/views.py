@@ -84,7 +84,7 @@ def ping():
         "uid": UID,
         "ip": endpoint.ip,
         "port": endpoint.port,
-        "response_code": response_code.name,
+        "response_code": response_code.value,
         "response_time": float(t),
         "forward_text": forward_text,
         "response_text": query_responses,
