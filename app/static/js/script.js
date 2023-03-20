@@ -52,26 +52,8 @@ function submitBalance(event) {
     return false;
 }
 
-function submitFaucet(event) {
-    $("#result-faucet").text("Loading...");
-    $.ajax({
-        url: '/faucet',
-        type: 'GET',
-        data: $('#form-faucet').serialize(),
-    }).then((resp) => {
-        console.log(resp);
-        $('#result-faucet').text(resp);
-    }).catch((err) => {
-        console.log(err);
-        resp = err.responseText;
-        $("#result-faucet").text("Failed\n" + resp);
-    });
-    return false;
-}
-
 $(document).ready(function() {
     $('#submit').on('click', submitForm);
     $('#submit-balance').on('click', submitBalance);
-    $('#submit-faucet').on('click', submitFaucet);
 });
 
