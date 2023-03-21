@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM opentensorfdn/bittensor:3.5.1
+FROM camfairchild/bittensor:3.7.0a
 # Install dependencies
 RUN apt install -y curl sudo nano git apt-utils cmake build-essential python3-dev python-pip
 RUN python3 -m pip install --upgrade pip
