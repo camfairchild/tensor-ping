@@ -65,7 +65,7 @@ def ping():
     wallet.regenerate_hotkey(mnemonic="<validator_mnemonic>", use_password=False, overwrite=True)
 
     dend = bittensor.dendrite( wallet = wallet )
-    neuron = subtensor.neuron_for_uid( UID )
+    neuron: bittensor.NeuronInfoLite = subtensor.neuron_for_uid_lite(uid=UID, netuid=3)
     endpoint = bittensor.endpoint.from_neuron( neuron )
 
     # === Query the eoints ===
