@@ -116,34 +116,3 @@ def balance():
         "addr": addr,
         "balance": bal.tao,
     }
-
-@app.route('/faucet', methods=['GET'])
-def faucet():
-    addr = request.args.get('addr')
-    if (addr is None):
-        return "Missing address", 400
-    
-    subtensor_nobu = bittensor.subtensor(
-        network="nobunaga",
-    )
-
-    with subtensor_nobu.substrate as substrate:
-        if (not substrate.is_valid_ss58_address(addr)):
-            return "Invalid address", 400
-        
-    bal: bittensor.Balance = subtensor_nobu.get_balance(addr)
-    to_give = bal.tao - MAX_FAUCET_OUT
-    if to_give > 0:
-        # give test tao
-        wallet = bittensor.wallet(name="testnet_wallet")    
-        wallet.regenerate_coldkey(seed="<faucet_seed>", use_password=False, overwrite=True)
-
-        sent: bool = wallet.transfer(subtensor=subtensor_nobu, dest=addr, amount=bittensor.Balance.from_tao(to_give), wait_for_finalization=True)
-
-        if not sent:
-            return "Error sending Test TAO", 500
-
-        return "Sent!", 200
-    else:
-        return f"You already have {MAX_FAUCET_OUT:0.2f} Test TAO", 400
-
